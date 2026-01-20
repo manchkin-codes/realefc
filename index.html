@@ -1,0 +1,1799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reale Hospital FC - Top of Division 2 Kenya</title>
+    
+    <!-- Favicon - Using the provided badge URL -->
+    <link rel="icon" href="https://deepseek-api-files.obs.cn-east-3.myhuaweicloud.com/raw/7a1a/2026/1/20/file-187ab951-d6d1-4568-890d-62f73d1be842?response-content-disposition=attachment%3B%20filename%3D%22WhatsApp%20Image%202026-01-20%20at%2015.21.56.jpeg%22&Expires=1769015238&AccessKeyId=OD83TSXECLFQNNSZ3IF6&Signature=8CY7952M/qXiNwhWXjyxKOp9zyo%3D" type="image/jpeg">
+    <link rel="shortcut icon" href="https://deepseek-api-files.obs.cn-east-3.myhuaweicloud.com/raw/7a1a/2026/1/20/file-187ab951-d6d1-4568-890d-62f73d1be842?response-content-disposition=attachment%3B%20filename%3D%22WhatsApp%20Image%202026-01-20%20at%2015.21.56.jpeg%22&Expires=1769015238&AccessKeyId=OD83TSXECLFQNNSZ3IF6&Signature=8CY7952M/qXiNwhWXjyxKOp9zyo%3D" type="image/jpeg">
+    <link rel="apple-touch-icon" href="https://deepseek-api-files.obs.cn-east-3.myhuaweicloud.com/raw/7a1a/2026/1/20/file-187ab951-d6d1-4568-890d-62f73d1be842?response-content-disposition=attachment%3B%20filename%3D%22WhatsApp%20Image%202026-01-20%20at%2015.21.56.jpeg%22&Expires=1769015238&AccessKeyId=OD83TSXECLFQNNSZ3IF6&Signature=8CY7952M/qXiNwhWXjyxKOp9zyo%3D">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap">
+    <style>
+        :root {
+            --primary-blue: #003087; /* Dark Blue - Primary brand color */
+            --secondary-green: #00a859; /* Green - Secondary brand color */
+            --accent-blue: #0056b3; /* Medium Blue */
+            --accent-green: #2ecc71; /* Light Green */
+            --accent-white: #ffffff;
+            --accent-light: #f8f9fa;
+            --accent-gray: #e9ecef;
+            --dark-color: #121212;
+            --light-color: #f8f9fa;
+            --success-color: #00a859;
+            --warning-color: #ff9f00;
+            --border-radius: 10px;
+            --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: #fafafa;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, #002060 100%);
+            color: var(--accent-white);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 48, 135, 0.15);
+            border-bottom: 3px solid var(--secondary-green);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 3px solid var(--accent-white);
+            box-shadow: 0 0 15px rgba(0, 168, 89, 0.3);
+            overflow: hidden;
+            background-color: white; /* Fallback if image doesn't load */
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .club-name {
+            text-align: left;
+        }
+
+        .club-name h1 {
+            margin: 0;
+            font-size: 1.8rem;
+            color: var(--accent-white);
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        .club-name p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: var(--accent-green);
+            font-weight: 500;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 1.5rem;
+            position: relative;
+        }
+
+        nav ul li a {
+            color: var(--accent-white);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 8px 15px;
+            border-radius: 30px;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            background-color: var(--secondary-green);
+            transform: translateY(-2px);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Main Content */
+        main {
+            padding: 2rem 0;
+            min-height: calc(100vh - 250px);
+        }
+
+        .page {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Hero Section - Football Theme */
+        .hero {
+            background: 
+                linear-gradient(rgba(0, 48, 135, 0.85), rgba(0, 40, 100, 0.85)),
+                url('https://images.unsplash.com/photo-1574623452334-1e0ac2b3ccb4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 6rem 0;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%2300a859' fill-opacity='0.15' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h2 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent-white);
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+            letter-spacing: 1px;
+        }
+
+        .hero h2 span {
+            color: var(--accent-green);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 2.5rem;
+            color: #e0e0e0;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 14px 28px;
+            background: linear-gradient(135deg, var(--secondary-green) 0%, #008c4a 100%);
+            color: var(--accent-white);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 10px rgba(0, 168, 89, 0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 168, 89, 0.4);
+            background: linear-gradient(135deg, #00b863 0%, #009c52 100%);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--accent-blue);
+            color: var(--accent-blue);
+            box-shadow: 0 4px 10px rgba(0, 86, 179, 0.2);
+        }
+
+        .btn-outline:hover {
+            background: var(--accent-blue);
+            color: var(--accent-white);
+            box-shadow: 0 8px 20px rgba(0, 86, 179, 0.3);
+        }
+
+        .btn-blue {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, #002060 100%);
+            box-shadow: 0 4px 10px rgba(0, 48, 135, 0.3);
+        }
+
+        .btn-blue:hover {
+            background: linear-gradient(135deg, #0038a8 0%, #002870 100%);
+            box-shadow: 0 8px 20px rgba(0, 48, 135, 0.4);
+        }
+
+        /* Sections */
+        .section-title {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2.5rem;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--secondary-green);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 100px;
+            height: 3px;
+            background-color: var(--primary-blue);
+        }
+
+        .section-title i {
+            margin-right: 15px;
+            color: var(--secondary-green);
+            font-size: 1.8rem;
+        }
+
+        /* Cards */
+        .card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            border-top: 4px solid var(--secondary-green);
+            height: 100%;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Grid Layouts */
+        .grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .grid-2 {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .grid-3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .grid-4 {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        /* Home Page Content */
+        .stats-section {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 3rem 0;
+            gap: 1.5rem;
+        }
+
+        .stat-box {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, #0030a0 100%);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            flex: 1;
+            min-width: 200px;
+            color: white;
+            border-bottom: 4px solid var(--secondary-green);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--accent-green);
+            margin-bottom: 0.5rem;
+            font-family: 'Oswald', sans-serif;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: #cccccc;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .news-highlights, .fixtures-results {
+            margin-bottom: 4rem;
+        }
+
+        .news-item {
+            padding: 1.5rem;
+            border-left: 5px solid var(--secondary-green);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            background-color: #f9f9f9;
+        }
+
+        .news-date {
+            font-size: 0.9rem;
+            color: var(--secondary-green);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .match-card {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .match-teams {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .match-team {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 40%;
+        }
+
+        .team-logo {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+            border: 2px solid white;
+            overflow: hidden;
+        }
+
+        .team-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .match-vs {
+            width: 20%;
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: var(--secondary-green);
+        }
+
+        .match-score {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-top: 0.5rem;
+            color: var(--primary-blue);
+        }
+
+        .match-info {
+            margin-top: 1.5rem;
+            color: var(--dark-color);
+            font-size: 0.9rem;
+        }
+
+        /* Player Cards */
+        .player-card {
+            text-align: center;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f9f9f9;
+        }
+
+        .player-photo {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 1.5rem;
+            border: 4px solid var(--secondary-green);
+            background: linear-gradient(135deg, var(--primary-blue) 0%, #0030a0 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--accent-white);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .player-number {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--secondary-green) 0%, #008c4a 100%);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            line-height: 40px;
+            font-weight: bold;
+            margin-bottom: 0.8rem;
+            font-size: 1.2rem;
+            border: 2px solid var(--accent-blue);
+        }
+
+        /* Fixtures & Results */
+        .fixture-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem;
+            border-bottom: 1px solid #eee;
+            transition: var(--transition);
+        }
+
+        .fixture-item:hover {
+            background-color: #f9f9f9;
+            transform: translateX(5px);
+        }
+
+        .fixture-item:last-child {
+            border-bottom: none;
+        }
+
+        .fixture-date {
+            font-weight: bold;
+            color: var(--secondary-green);
+            min-width: 140px;
+            font-family: 'Oswald', sans-serif;
+        }
+
+        .fixture-competition {
+            font-size: 0.9rem;
+            color: var(--dark-color);
+        }
+
+        .fixture-status {
+            padding: 6px 15px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .status-upcoming {
+            background-color: #e7f3ff;
+            color: var(--primary-blue);
+        }
+
+        .status-result {
+            background-color: #e7f6ea;
+            color: var(--success-color);
+        }
+
+        /* Division 2 Table */
+        .division-table {
+            overflow-x: auto;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+
+        .division-table table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+        }
+
+        .division-table th,
+        .division-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .division-table th {
+            background-color: var(--primary-blue);
+            color: white;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .division-table tr:hover {
+            background-color: #f9f9f9;
+        }
+
+        .team-highlight {
+            background-color: #e8f5e9 !important;
+            font-weight: bold;
+            color: var(--secondary-green);
+            border-left: 4px solid var(--secondary-green);
+        }
+
+        /* Contact Page */
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .contact-item {
+            flex: 1;
+            min-width: 250px;
+            background-color: white;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            border-top: 4px solid var(--accent-blue);
+        }
+
+        .contact-item i {
+            color: var(--secondary-green);
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+
+        .contact-form .form-group {
+            margin-bottom: 1.8rem;
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--primary-blue);
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-family: 'Roboto', sans-serif;
+            transition: var(--transition);
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--secondary-green);
+            box-shadow: 0 0 0 3px rgba(0, 168, 89, 0.1);
+        }
+
+        .contact-form textarea {
+            min-height: 180px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, #002060 100%);
+            color: white;
+            padding: 4rem 0 2rem;
+            margin-top: 4rem;
+            position: relative;
+            border-top: 3px solid var(--secondary-green);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 3rem;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .footer-section h3 {
+            color: var(--accent-green);
+            margin-bottom: 1.8rem;
+            font-size: 1.3rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--secondary-green);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a {
+            color: #cccccc;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-green);
+            transform: translateX(5px);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-icons a:hover {
+            background-color: var(--secondary-green);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 3rem;
+            margin-top: 3rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 55px;
+            height: 55px;
+            background: linear-gradient(135deg, var(--secondary-green) 0%, #008c4a 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            text-decoration: none;
+            box-shadow: 0 5px 15px rgba(0, 168, 89, 0.4);
+            transition: var(--transition);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            border: 2px solid white;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 8px 20px rgba(0, 168, 89, 0.5);
+        }
+
+        /* Text Center Utility */
+        .text-center {
+            text-align: center;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1100px) {
+            .grid-4 {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 992px) {
+            .grid-4 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .grid-3 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .hero h2 {
+                font-size: 2.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            nav ul {
+                position: fixed;
+                top: 85px;
+                left: 0;
+                width: 100%;
+                background-color: var(--primary-blue);
+                flex-direction: column;
+                align-items: center;
+                padding: 1.5rem 0;
+                display: none;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+                z-index: 999;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            nav ul li {
+                margin: 0.8rem 0;
+            }
+
+            .grid-4, .grid-3, .grid-2 {
+                grid-template-columns: 1fr;
+            }
+
+            .match-teams {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .match-team, .match-vs {
+                width: 100%;
+            }
+
+            .hero h2 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .stat-box {
+                min-width: 45%;
+            }
+            
+            .footer-content {
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 280px;
+            }
+
+            .club-name h1 {
+                font-size: 1.5rem;
+            }
+            
+            .hero {
+                padding: 4rem 0;
+            }
+            
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+                font-size: 1.2rem;
+            }
+            
+            .stat-box {
+                min-width: 100%;
+            }
+            
+            .logo {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .logo img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo-container">
+                <div class="logo">
+                    <img src="https://deepseek-api-files.obs.cn-east-3.myhuaweicloud.com/raw/7a1a/2026/1/20/file-187ab951-d6d1-4568-890d-62f73d1be842?response-content-disposition=attachment%3B%20filename%3D%22WhatsApp%20Image%202026-01-20%20at%2015.21.56.jpeg%22&Expires=1769015238&AccessKeyId=OD83TSXECLFQNNSZ3IF6&Signature=8CY7952M/qXiNwhWXjyxKOp9zyo%3D" alt="Reale Hospital FC Badge">
+                </div>
+                <div class="club-name">
+                    <h1>REALE HOSPITAL FC</h1>
+                    <p><i class="fas fa-trophy"></i> TOP OF KENYA DIVISION 2</p>
+                </div>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav>
+                <ul id="mainNav">
+                    <li><a href="#home" class="nav-link active" data-page="home"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="#about" class="nav-link" data-page="about"><i class="fas fa-info-circle"></i> About</a></li>
+                    <li><a href="#team" class="nav-link" data-page="team"><i class="fas fa-users"></i> Squad</a></li>
+                    <li><a href="#fixtures" class="nav-link" data-page="fixtures"><i class="fas fa-calendar-alt"></i> Fixtures</a></li>
+                    <li><a href="#news" class="nav-link" data-page="news"><i class="fas fa-newspaper"></i> News</a></li>
+                    <li><a href="#contact" class="nav-link" data-page="contact"><i class="fas fa-envelope"></i> Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Home Page -->
+        <section id="home-page" class="page active">
+            <div class="hero">
+                <div class="hero-content">
+                    <h2>REALE <span>HOSPITAL</span> FOOTBALL CLUB</h2>
+                    <p>Leading the Kenya Division 2 with passion, skill, and determination. Our home is Potters Academy Grounds, where we build our legacy one match at a time.</p>
+                    <div class="cta-buttons">
+                        <a href="#fixtures" class="btn view-fixtures-btn"><i class="fas fa-calendar-day"></i> View Fixtures</a>
+                        <a href="#team" class="btn btn-outline meet-team-btn"><i class="fas fa-futbol"></i> Meet The Team</a>
+                        <a href="#news" class="btn btn-blue latest-news-btn"><i class="fas fa-trophy"></i> Latest News</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="stats-section">
+                <div class="stat-box">
+                    <div class="stat-number">1<sup>st</sup></div>
+                    <div class="stat-label">League Position</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">7</div>
+                    <div class="stat-label">Matches Played</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">16</div>
+                    <div class="stat-label">Points</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">12:5</div>
+                    <div class="stat-label">Goals For:Against</div>
+                </div>
+            </div>
+            
+            <div class="news-highlights">
+                <div class="section-title">
+                    <i class="fas fa-newspaper"></i>
+                    <h2>Latest News & Highlights</h2>
+                </div>
+                
+                <div class="grid grid-2">
+                    <div class="card news-item">
+                        <div class="news-date"><i class="far fa-calendar"></i> January 19, 2026</div>
+                        <h3>REALE HOSPITAL FC TOPS DIVISION 2 TABLE</h3>
+                        <p>With 5 wins, 1 draw, and only 1 loss, our team proudly sits at the top of the Kenya Division 2 table. Our defensive record of only 5 goals conceded in 7 matches is the best in the league.</p>
+                        <a href="#news" class="btn read-more-btn" style="margin-top: auto; padding: 10px 20px; align-self: flex-start;"><i class="fas fa-arrow-right"></i> Read Full Story</a>
+                    </div>
+                    
+                    <div class="card news-item">
+                        <div class="news-date"><i class="far fa-calendar"></i> January 18, 2026</div>
+                        <h3>CRUCIAL WIN AGAINST TULWET FC</h3>
+                        <p>In a top-of-the-table clash, Reale Hospital FC secured a vital 2-0 victory against second-placed Tulwet FC, extending our lead at the summit. Goals from Mutsotso and Fidu sealed the three points.</p>
+                        <a href="#news" class="btn read-more-btn" style="margin-top: auto; padding: 10px 20px; align-self: flex-start;"><i class="fas fa-arrow-right"></i> Read Full Story</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="fixtures-results">
+                <div class="section-title">
+                    <i class="fas fa-futbol"></i>
+                    <h2>Upcoming Fixtures & Recent Results</h2>
+                </div>
+                
+                <div class="grid grid-2">
+                    <div class="card match-card">
+                        <h3>Next Match</h3>
+                        <div class="match-teams">
+                            <div class="match-team">
+                                <div class="team-logo">
+                                    <img src="https://deepseek-api-files.obs.cn-east-3.myhuaweicloud.com/raw/7a1a/2026/1/20/file-187ab951-d6d1-4568-890d-62f73d1be842?response-content-disposition=attachment%3B%20filename%3D%22WhatsApp%20Image%202026-01-20%20at%2015.21.56.jpeg%22&Expires=1769015238&AccessKeyId=OD83TSXECLFQNNSZ3IF6&Signature=8CY7952M/qXiNwhWXjyxKOp9zyo%3D" alt="Reale Hospital FC Badge">
+                                </div>
+                                <h4>Reale Hospital FC</h4>
+                            </div>
+                            <div class="match-vs">VS</div>
+                            <div class="match-team">
+                                <div class="team-logo">PS</div>
+                                <h4>Psalms 105 FC</h4>
+                            </div>
+                        </div>
+                        <div class="match-info">
+                            <p><i class="far fa-calendar-alt"></i> <strong>January 26, 2026 | 15:00</strong></p>
+                            <p><i class="fas fa-map-marker-alt"></i> Potters Academy Grounds</p>
+                            <p><i class="fas fa-trophy"></i> Kenya Division 2 - Matchday 8</p>
+                        </div>
+                        <a href="#fixtures" class="btn" style="margin-top: 1.5rem;"><i class="fas fa-info-circle"></i> Match Details</a>
+                    </div>
+                    
+                    <div class="card match-card">
+                        <h3>Last Match Result</h3>
+                        <div class="match-teams">
+                            <div class="match-team">
+                                <div class="team-logo">
+                                    <img src="https://deepseek-api-files.obs.cn-east-3.myhuaweicloud.com/raw/7a1a/2026/1/20/file-187ab951-d6d1-4568-890d-62f73d1be842?response-content-disposition=attachment%3B%20filename%3D%22WhatsApp%20Image%202026-01-20%20at%2015.21.56.jpeg%22&Expires=1769015238&AccessKeyId=OD83TSXECLFQNNSZ3IF6&Signature=8CY7952M/qXiNwhWXjyxKOp9zyo%3D" alt="Reale Hospital FC Badge">
+                                </div>
+                                <h4>Reale Hospital FC</h4>
+                            </div>
+                            <div class="match-score">2 - 0</div>
+                            <div class="match-team">
+                                <div class="team-logo">TL</div>
+                                <h4>Tulwet FC</h4>
+                            </div>
+                        </div>
+                        <div class="match-info">
+                            <p><i class="far fa-calendar-alt"></i> <strong>January 18, 2026 | 15:00</strong></p>
+                            <p><i class="fas fa-map-marker-alt"></i> Potters Academy Grounds</p>
+                            <p><i class="fas fa-trophy"></i> Kenya Division 2 - Matchday 7</p>
+                        </div>
+                        <a href="#news" class="btn btn-outline" style="margin-top: 1.5rem;"><i class="fas fa-play-circle"></i> Match Highlights</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Division 2 Table Section -->
+            <div class="division-table">
+                <div class="section-title">
+                    <i class="fas fa-table"></i>
+                    <h2>Kenya Division 2 Standings</h2>
+                </div>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Team</th>
+                            <th>Pld</th>
+                            <th>W</th>
+                            <th>D</th>
+                            <th>L</th>
+                            <th>F/A</th>
+                            <th>+/-</th>
+                            <th>Pts</th>
+                        </tr>
+                    </thead>
+                    <tbody id="division-table-body">
+                        <!-- Division 2 table will be loaded here -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- About Club Page -->
+        <section id="about-page" class="page">
+            <div class="section-title">
+                <i class="fas fa-info-circle"></i>
+                <h2>About Reale Hospital FC</h2>
+            </div>
+            
+            <div class="card">
+                <h3><i class="fas fa-history"></i> Club History & Identity</h3>
+                <p>Founded as a representation of Reale Hospital, our football club has evolved into a powerhouse in Kenya's Division 2. We embody the values of health, resilience, and community spirit both on and off the pitch.</p>
+                <p>Our journey from humble beginnings to topping Division 2 is a testament to our commitment to developing local talent and playing attractive, competitive football that brings pride to our community.</p>
+            </div>
+            
+            <div class="grid grid-3">
+                <div class="card">
+                    <h3><i class="fas fa-eye"></i> Our Vision</h3>
+                    <p>To establish ourselves as the premier football development club in Kenya, creating pathways for local talent to reach professional levels while maintaining our community roots and competitive edge.</p>
+                </div>
+                
+                <div class="card">
+                    <h3><i class="fas fa-bullseye"></i> Our Mission</h3>
+                    <p>To compete at the highest levels of Kenyan football while developing local talent, promoting health and fitness, and serving as a positive force in our community through sportsmanship and excellence.</p>
+                </div>
+                
+                <div class="card">
+                    <h3><i class="fas fa-heart"></i> Core Values</h3>
+                    <ul style="list-style: none; padding-left: 0;">
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: var(--success-color);"></i> <strong>Integrity:</strong> Fair play on and off the pitch</li>
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: var(--success-color);"></i> <strong>Community:</strong> Serving and representing our people</li>
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: var(--success-color);"></i> <strong>Excellence:</strong> Striving for the highest standards</li>
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: var(--success-color);"></i> <strong>Development:</strong> Growing talent and character</li>
+                        <li><i class="fas fa-check-circle" style="color: var(--success-color);"></i> <strong>Passion:</strong> Love for the beautiful game</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h3><i class="fas fa-stadium"></i> Home Ground - Potters Academy</h3>
+                <div class="grid grid-2">
+                    <div>
+                        <p><strong><i class="fas fa-map-pin"></i> Location:</strong> Potters Academy Grounds, Kenya</p>
+                        <p><strong><i class="fas fa-grass"></i> Surface:</strong> Natural Grass Pitch</p>
+                        <p><strong><i class="fas fa-users"></i> Capacity:</strong> 1,500 passionate supporters</p>
+                        <p><strong><i class="fas fa-building"></i> Facilities:</strong> Modern changing rooms, training area, spectator seating</p>
+                        <p>Our fortress at Potters Academy Grounds is where we build our home advantage. The intimate atmosphere with passionate supporters creates an electric environment that opponents fear and our players thrive in.</p>
+                    </div>
+                    <div>
+                        <div style="background: linear-gradient(135deg, var(--primary-blue) 0%, #0030a0 100%); height: 220px; border-radius: var(--border-radius); display: flex; align-items: center; justify-content: center; flex-direction: column; color: white; padding: 20px; text-align: center;">
+                            <i class="fas fa-futbol" style="font-size: 4rem; color: var(--accent-green); margin-bottom: 1rem;"></i>
+                            <h4 style="color: white;">POTTERS ACADEMY</h4>
+                            <p>The Home of Champions</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h3><i class="fas fa-user-tie"></i> Technical Team & Management</h3>
+                <div class="grid grid-3">
+                    <div class="text-center">
+                        <div class="player-photo">
+                            <i class="fas fa-whistle"></i>
+                        </div>
+                        <h4>Coach Simai</h4>
+                        <p>Head Coach</p>
+                        <p class="fixture-competition" style="font-size: 0.8rem;">Tactical Mastermind</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="player-photo">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                        <h4>Medical Team</h4>
+                        <p>Physio & Doctor</p>
+                        <p class="fixture-competition" style="font-size: 0.8rem;">Player Health & Fitness</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="player-photo">
+                            <i class="fas fa-clipboard-check"></i>
+                        </div>
+                        <h4>Assistant Coach</h4>
+                        <p>Training & Analysis</p>
+                        <p class="fixture-competition" style="font-size: 0.8rem;">Match Preparation</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team / Squad Page -->
+        <section id="team-page" class="page">
+            <div class="section-title">
+                <i class="fas fa-users"></i>
+                <h2>Team & Squad - 2026 Season</h2>
+            </div>
+            
+            <div class="card">
+                <h3><i class="fas fa-futbol"></i> First Team Players</h3>
+                <div class="grid grid-4" id="players-container">
+                    <!-- Players will be dynamically loaded here -->
+                </div>
+            </div>
+            
+            <div class="card">
+                <h3><i class="fas fa-trophy"></i> Team Statistics</h3>
+                <div class="grid grid-3">
+                    <div class="text-center">
+                        <div style="font-size: 3rem; color: var(--secondary-green); margin-bottom: 10px;">
+                            <i class="fas fa-futbol"></i>
+                        </div>
+                        <h4>Top Scorer</h4>
+                        <p>Mutsotso (14)</p>
+                        <p class="fixture-competition">5 Goals This Season</p>
+                    </div>
+                    <div class="text-center">
+                        <div style="font-size: 3rem; color: var(--secondary-green); margin-bottom: 10px;">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h4>Clean Sheets</h4>
+                        <p>Kad (12)</p>
+                        <p class="fixture-competition">3 Clean Sheets</p>
+                    </div>
+                    <div class="text-center">
+                        <div style="font-size: 3rem; color: var(--secondary-green); margin-bottom: 10px;">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>Player of Month</h4>
+                        <p>Fidu (47)</p>
+                        <p class="fixture-competition">January 2026</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fixtures & Results Page -->
+        <section id="fixtures-page" class="page">
+            <div class="section-title">
+                <i class="fas fa-calendar-alt"></i>
+                <h2>Fixtures & Results - Division 2</h2>
+            </div>
+            
+            <div class="card">
+                <h3><i class="fas fa-arrow-right"></i> Upcoming Matches</h3>
+                <div id="upcoming-fixtures">
+                    <!-- Upcoming fixtures will be loaded here -->
+                </div>
+            </div>
+            
+            <div class="card">
+                <h3><i class="fas fa-check-circle"></i> Recent Results</h3>
+                <div id="recent-results">
+                    <!-- Recent results will be loaded here -->
+                </div>
+            </div>
+            
+            <div class="division-table">
+                <h3><i class="fas fa-table"></i> Division 2 Standings</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Team</th>
+                            <th>Pld</th>
+                            <th>W</th>
+                            <th>D</th>
+                            <th>L</th>
+                            <th>F/A</th>
+                            <th>+/-</th>
+                            <th>Pts</th>
+                        </tr>
+                    </thead>
+                    <tbody id="fixtures-table-body">
+                        <!-- Division 2 table will be loaded here -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- News & Media Page -->
+        <section id="news-page" class="page">
+            <div class="section-title">
+                <i class="fas fa-newspaper"></i>
+                <h2>News & Media Center</h2>
+            </div>
+            
+            <div class="grid grid-2" id="news-container">
+                <!-- News items will be loaded here -->
+            </div>
+            
+            <div class="card">
+                <h3><i class="fas fa-images"></i> Match Gallery</h3>
+                <div class="grid grid-4">
+                    <div style="height: 160px; background: linear-gradient(135deg, var(--primary-blue) 0%, #0030a0 100%); border-radius: var(--border-radius); display: flex; align-items: center; justify-content: center; color: white;">
+                        <div style="text-align: center;">
+                            <i class="fas fa-camera" style="font-size: 2.5rem; color: var(--accent-green); margin-bottom: 10px;"></i>
+                            <p>Vs Tulwet FC</p>
+                        </div>
+                    </div>
+                    <div style="height: 160px; background: linear-gradient(135deg, var(--primary-blue) 0%, #0030a0 100%); border-radius: var(--border-radius); display: flex; align-items: center; justify-content: center; color: white;">
+                        <div style="text-align: center;">
+                            <i class="fas fa-camera" style="font-size: 2.5rem; color: var(--accent-green); margin-bottom: 10px;"></i>
+                            <p>Training Session</p>
+                        </div>
+                    </div>
+                    <div style="height: 160px; background: linear-gradient(135deg, var(--primary-blue) 0%, #0030a0 100%); border-radius: var(--border-radius); display: flex; align-items: center; justify-content: center; color: white;">
+                        <div style="text-align: center;">
+                            <i class="fas fa-camera" style="font-size: 2.5rem; color: var(--accent-green); margin-bottom: 10px;"></i>
+                            <p>Team Celebrations</p>
+                        </div>
+                    </div>
+                    <div style="height: 160px; background: linear-gradient(135deg, var(--primary-blue) 0%, #0030a0 100%); border-radius: var(--border-radius); display: flex; align-items: center; justify-content: center; color: white;">
+                        <div style="text-align: center;">
+                            <i class="fas fa-camera" style="font-size: 2.5rem; color: var(--accent-green); margin-bottom: 10px;"></i>
+                            <p>Fans Gallery</p>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-center" style="margin-top: 1.5rem;"><em>Match photos uploaded after each Division 2 fixture. Check back for updates!</em></p>
+            </div>
+            
+            <div class="card">
+                <h3><i class="fas fa-video"></i> Video Highlights</h3>
+                <div class="grid grid-2">
+                    <div style="height: 220px; background: linear-gradient(135deg, var(--primary-blue) 0%, #0030a0 100%); border-radius: var(--border-radius); display: flex; align-items: center; justify-content: center; flex-direction: column; color: white;">
+                        <i class="fas fa-play-circle" style="font-size: 4rem; color: var(--accent-green); margin-bottom: 1rem;"></i>
+                        <h4>Reale Hospital FC 2-0 Tulwet FC</h4>
+                        <p>Matchday 7 Highlights</p>
+                    </div>
+                    <div style="height: 220px; background: linear-gradient(135deg, var(--primary-blue) 0%, #0030a0 100%); border-radius: var(--border-radius); display: flex; align-items: center; justify-content: center; flex-direction: column; color: white;">
+                        <i class="fas fa-play-circle" style="font-size: 4rem; color: var(--accent-green); margin-bottom: 1rem;"></i>
+                        <h4>Behind The Scenes</h4>
+                        <p>Training & Preparation</p>
+                    </div>
+                </div>
+                <p class="text-center" style="margin-top: 1.5rem;"><em>Match highlights available 24 hours after each Division 2 game</em></p>
+            </div>
+        </section>
+
+        <!-- Contact Page -->
+        <section id="contact-page" class="page">
+            <div class="section-title">
+                <i class="fas fa-envelope"></i>
+                <h2>Contact Reale Hospital FC</h2>
+            </div>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h3><i class="fas fa-map-marker-alt"></i> Address & Location</h3>
+                    <p><strong>Home Ground:</strong> Potters Academy Grounds</p>
+                    <p><strong>Training Base:</strong> Reale Hospital Sports Complex</p>
+                    <p><strong>Mailing Address:</strong> P.O. Box 12345, Kenya</p>
+                </div>
+                
+                <div class="contact-item">
+                    <h3><i class="fas fa-phone"></i> Phone & Communication</h3>
+                    <p><strong>General Inquiries:</strong> +254 7XX XXX XXX</p>
+                    <p><strong>Team Manager:</strong> +254 7XX XXX XXX</p>
+                    <p><strong>Emergency Contact:</strong> +254 7XX XXX XXX</p>
+                </div>
+                
+                <div class="contact-item">
+                    <h3><i class="fas fa-envelope"></i> Email & Online</h3>
+                    <p><strong>General:</strong> info@realehospitalfc.co.ke</p>
+                    <p><strong>Fixtures:</strong> fixtures@realehospitalfc.co.ke</p>
+                    <p><strong>Partnerships:</strong> partnerships@realehospitalfc.co.ke</p>
+                </div>
+            </div>
+            
+            <div class="grid grid-2">
+                <div class="card">
+                    <h3><i class="fas fa-map-marked-alt"></i> Our Location</h3>
+                    <div style="height: 320px; background: linear-gradient(135deg, var(--primary-blue) 0%, #0030a0 100%); border-radius: var(--border-radius); display: flex; align-items: center; justify-content: center; flex-direction: column; color: white; text-align: center; padding: 20px;">
+                        <i class="fas fa-map-marker-alt" style="font-size: 5rem; color: var(--accent-green); margin-bottom: 1rem;"></i>
+                        <h4>POTTERS ACADEMY GROUNDS</h4>
+                        <p>The official home of Reale Hospital FC</p>
+                        <p style="margin-top: 1rem; font-size: 0.9rem;">Open for training sessions and match days. Welcome to our fortress!</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3><i class="fas fa-paper-plane"></i> Send Us a Message</h3>
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name"><i class="fas fa-user"></i> Full Name</label>
+                            <input type="text" id="name" required placeholder="Enter your full name">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email"><i class="fas fa-envelope"></i> Email Address</label>
+                            <input type="email" id="email" required placeholder="Enter your email address">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject"><i class="fas fa-tag"></i> Subject</label>
+                            <input type="text" id="subject" required placeholder="Subject of your message">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message"><i class="fas fa-comment"></i> Message</label>
+                            <textarea id="message" required placeholder="Type your message here..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn" style="width: 100%;"><i class="fas fa-paper-plane"></i> Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-section">
+                <h3>REALE HOSPITAL FC</h3>
+                <p>Top of Kenya Division 2. Building a legacy of excellence, passion, and community through football at Potters Academy Grounds.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Navigation</h3>
+                <ul class="footer-links">
+                    <li><a class="footer-link" data-page="home"><i class="fas fa-chevron-right"></i> Home</a></li>
+                    <li><a class="footer-link" data-page="about"><i class="fas fa-chevron-right"></i> About Club</a></li>
+                    <li><a class="footer-link" data-page="team"><i class="fas fa-chevron-right"></i> Team / Squad</a></li>
+                    <li><a class="footer-link" data-page="fixtures"><i class="fas fa-chevron-right"></i> Fixtures & Results</a></li>
+                    <li><a class="footer-link" data-page="news"><i class="fas fa-chevron-right"></i> News & Media</a></li>
+                    <li><a class="footer-link" data-page="contact"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Division 2 Info</h3>
+                <ul class="footer-links">
+                    <li><a class="footer-link" data-page="fixtures"><i class="fas fa-chevron-right"></i> League Standings</a></li>
+                    <li><a class="footer-link" data-page="fixtures"><i class="fas fa-chevron-right"></i> Match Schedule</a></li>
+                    <li><a class="footer-link" data-page="news"><i class="fas fa-chevron-right"></i> Match Reports</a></li>
+                    <li><a class="footer-link" data-page="team"><i class="fas fa-chevron-right"></i> Player Stats</a></li>
+                    <li><a href="/admin"><i class="fas fa-chevron-right"></i>Division 2</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Club Information</h3>
+                <p><i class="fas fa-map-marker-alt"></i> <strong>Home:</strong> Potters Academy Grounds</p>
+                <p><i class="fas fa-phone"></i> <strong>Phone:</strong> +254 7XX XXX XXX</p>
+                <p><i class="fas fa-envelope"></i> <strong>Email:</strong> info@realehospitalfc.co.ke</p>
+                <p><i class="fas fa-trophy"></i> <strong>Position:</strong> 1st - Division 2</p>
+                <p><i class="fas fa-calendar"></i> <strong>Next Match:</strong> Jan 26 vs Psalms 105 FC</p>
+            </div>
+        </div>
+        
+        <div class="container copyright">
+            <p>&copy; 2026 Reale Hospital Football Club. All rights reserved. | Top of Kenya Division 2 | Potters Academy Grounds</p>
+            <p style="margin-top: 10px; font-size: 0.8rem;">Official Website of Reale Hospital FC - Passion, Pride, Victory</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script>
+        // Data for the website
+        let players = [
+            { id: 1, name: "Mutsotso", position: "Forward", number: 14, bio: "Top scorer with 5 goals this season" },
+            { id: 2, name: "Simai", position: "Midfielder", number: 70, bio: "Team captain and creative playmaker" },
+            { id: 3, name: "Fidu", position: "Defender", number: 47, bio: "Solid defender, Player of the Month" },
+            { id: 4, name: "Ones", position: "Forward", number: 85, bio: "Pacy winger with 3 assists" },
+            { id: 5, name: "Elak", position: "Defender", number: 16, bio: "Reliable center-back, aerial specialist" },
+            { id: 6, name: "Noh", position: "Midfielder", number: 29, bio: "Creative midfielder with great vision" },
+            { id: 7, name: "Aic", position: "Midfielder", number: 15, bio: "Box-to-box midfielder, workhorse" },
+            { id: 8, name: "Kad", position: "Goalkeeper", number: 12, bio: "First choice keeper, 3 clean sheets" },
+            { id: 9, name: "Neal", position: "Forward", number: 44, bio: "Versatile attacker, 2 goals" },
+            { id: 10, name: "Neal", position: "Midfielder", number: 70, bio: "Experienced playmaker" },
+            { id: 11, name: "Neal", position: "Defender", number: 240, bio: "Defensive leader, organizes backline" },
+            { id: 12, name: "Neal", position: "Midfielder", number: 35, bio: "Young talent, promising future" },
+            { id: 13, name: "Neal", position: "Defender", number: 16, bio: "Attacking full-back, good crosser" }
+        ];
+
+        let news = [
+            { id: 1, title: "REALE HOSPITAL FC TOPS DIVISION 2 TABLE", date: "2026-01-19", content: "With 5 wins, 1 draw, and only 1 loss, our team proudly sits at the top of the Kenya Division 2 table. Our defensive record of only 5 goals conceded in 7 matches is the best in the league. The team's impressive form has seen them take 16 points from a possible 21, establishing a 2-point lead over second-placed Tulwet FC." },
+            { id: 2, title: "CRUCIAL WIN AGAINST TULWET FC", date: "2026-01-18", content: "In a top-of-the-table clash, Reale Hospital FC secured a vital 2-0 victory against second-placed Tulwet FC, extending our lead at the summit. Goals from Mutsotso (14) and Fidu (47) sealed the three points in front of a passionate home crowd at Potters Academy Grounds. The win demonstrates our championship credentials and mental strength in big games." },
+            { id: 3, title: "FIDU NAMED PLAYER OF THE MONTH", date: "2026-01-15", content: "Defender Fidu has been named Player of the Month for January 2026 after a series of outstanding performances. The number 47 has been instrumental in our defensive solidity, contributing to 3 clean sheets while also scoring crucial goals, including the winner against Tulwet FC. His leadership at the back has been key to our success this season." },
+            { id: 4, title: "NEXT GENERATION TALENT EMERGING", date: "2026-01-10", content: "Young talent from our development squad has been impressing in training and earning first-team opportunities. This commitment to youth development ensures a bright future for Reale Hospital FC while maintaining our position at the top of Division 2. Several academy graduates are now regular fixtures in the first-team squad." }
+        ];
+
+        let fixtures = [
+            { id: 1, type: "upcoming", home: "Reale Hospital FC", away: "Psalms 105 FC", date: "2026-01-26", time: "15:00", venue: "Potters Academy Grounds", competition: "Division 2 - Matchday 8" },
+            { id: 2, type: "upcoming", home: "BMC FC", away: "Reale Hospital FC", date: "2026-02-02", time: "15:00", venue: "BMC Stadium", competition: "Division 2 - Matchday 9" },
+            { id: 3, type: "upcoming", home: "Reale Hospital FC", away: "Loreto Kings", date: "2026-02-09", time: "15:00", venue: "Potters Academy Grounds", competition: "Division 2 - Matchday 10" },
+            { id: 4, type: "result", home: "Reale Hospital FC", away: "Tulwet FC", date: "2026-01-18", score: "2-0", venue: "Potters Academy Grounds", competition: "Division 2 - Matchday 7" },
+            { id: 5, type: "result", home: "Golden Knights", away: "Reale Hospital FC", date: "2026-01-11", score: "1-3", venue: "Knights Stadium", competition: "Division 2 - Matchday 6" },
+            { id: 6, type: "result", home: "Reale Hospital FC", away: "Blitz FC", date: "2026-01-04", score: "2-1", venue: "Potters Academy Grounds", competition: "Division 2 - Matchday 5" }
+        ];
+
+        // Kenya Division 2 Standings - Updated from provided image
+        let division2Standings = [
+            { position: 1, team: "Reale Hospital FC", played: 7, won: 5, drawn: 1, lost: 1, gf: 12, ga: 5, gd: 7, points: 16 },
+            { position: 2, team: "Tulwet FC", played: 6, won: 4, drawn: 2, lost: 0, gf: 16, ga: 7, gd: 9, points: 14 },
+            { position: 3, team: "Psalms 105 FC", played: 6, won: 4, drawn: 1, lost: 1, gf: 9, ga: 2, gd: 7, points: 13 },
+            { position: 4, team: "BMC FC", played: 6, won: 3, drawn: 2, lost: 1, gf: 10, ga: 5, gd: 5, points: 11 },
+            { position: 5, team: "Loreto Kings", played: 6, won: 2, drawn: 1, lost: 3, gf: 10, ga: 9, gd: 1, points: 7 },
+            { position: 6, team: "Golden Knights", played: 7, won: 1, drawn: 4, lost: 2, gf: 11, ga: 12, gd: -1, points: 7 },
+            { position: 7, team: "Blitz FC", played: 5, won: 2, drawn: 1, lost: 2, gf: 3, ga: 8, gd: -5, points: 7 },
+            { position: 8, team: "Tumkkas FC", played: 5, won: 1, drawn: 2, lost: 2, gf: 3, ga: 5, gd: -2, points: 5 },
+            { position: 9, team: "Kiebor FC", played: 2, won: 1, drawn: 0, lost: 1, gf: 2, ga: 3, gd: -1, points: 3 },
+            { position: 10, team: "Kapsabet All Stars", played: 6, won: 0, drawn: 3, lost: 3, gf: 6, ga: 9, gd: -3, points: 3 },
+            { position: 11, team: "Nandi Bullets", played: 4, won: 0, drawn: 1, lost: 3, gf: 3, ga: 12, gd: -9, points: 1 },
+            { position: 12, team: "Nape FC", played: 6, won: 0, drawn: 2, lost: 4, gf: 5, ga: 13, gd: -10, points: -1 }
+        ];
+
+        // DOM Elements
+        const pages = document.querySelectorAll('.page');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mainNav = document.getElementById('mainNav');
+        const playersContainer = document.getElementById('players-container');
+        const newsContainer = document.getElementById('news-container');
+        const upcomingFixtures = document.getElementById('upcoming-fixtures');
+        const recentResults = document.getElementById('recent-results');
+        const divisionTableBody = document.getElementById('division-table-body');
+        const fixturesTableBody = document.getElementById('fixtures-table-body');
+        const contactForm = document.getElementById('contactForm');
+        const backToTop = document.getElementById('backToTop');
+        const footerLinks = document.querySelectorAll('.footer-link');
+        
+        // Initialize the website
+        function init() {
+            // Load initial data
+            renderPlayers();
+            renderNews();
+            renderFixtures();
+            renderDivisionTable();
+            
+            // Set up event listeners
+            setupEventListeners();
+            
+            // Check URL hash for page navigation
+            checkUrlHash();
+            
+            // Setup button functionality
+            setupButtonFunctionality();
+        }
+
+        // Set up all event listeners
+        function setupEventListeners() {
+            // Navigation
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const pageId = link.getAttribute('data-page');
+                    showPage(pageId);
+                    
+                    // Update URL hash
+                    window.location.hash = pageId;
+                    
+                    // Update active nav link
+                    navLinks.forEach(navLink => navLink.classList.remove('active'));
+                    link.classList.add('active');
+                    
+                    // Close mobile menu if open
+                    mainNav.classList.remove('active');
+                });
+            });
+
+            // Mobile menu toggle
+            mobileMenuBtn.addEventListener('click', () => {
+                mainNav.classList.toggle('active');
+            });
+
+            // Contact form submission
+            if (contactForm) {
+                contactForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    alert('Thank you for your message! We will get back to you soon.');
+                    contactForm.reset();
+                });
+            }
+
+            // Back to top button
+            window.addEventListener('scroll', toggleBackToTop);
+            backToTop.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+            // Footer links
+            footerLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const pageId = link.getAttribute('data-page');
+                    if (pageId) {
+                        // Find and click the corresponding nav link
+                        const targetNavLink = document.querySelector(`.nav-link[data-page="${pageId}"]`);
+                        if (targetNavLink) {
+                            targetNavLink.click();
+                        }
+                    }
+                });
+            });
+        }
+
+        // Setup button functionality for CTA buttons
+        function setupButtonFunctionality() {
+            // Home page CTA buttons
+            const viewFixturesBtn = document.querySelector('.view-fixtures-btn');
+            const meetTeamBtn = document.querySelector('.meet-team-btn');
+            const latestNewsBtn = document.querySelector('.latest-news-btn');
+            const readMoreBtns = document.querySelectorAll('.read-more-btn');
+            
+            if (viewFixturesBtn) {
+                viewFixturesBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const fixturesLink = document.querySelector('.nav-link[data-page="fixtures"]');
+                    if (fixturesLink) fixturesLink.click();
+                });
+            }
+            
+            if (meetTeamBtn) {
+                meetTeamBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const teamLink = document.querySelector('.nav-link[data-page="team"]');
+                    if (teamLink) teamLink.click();
+                });
+            }
+            
+            if (latestNewsBtn) {
+                latestNewsBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const newsLink = document.querySelector('.nav-link[data-page="news"]');
+                    if (newsLink) newsLink.click();
+                });
+            }
+            
+            // Read more buttons
+            readMoreBtns.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const newsLink = document.querySelector('.nav-link[data-page="news"]');
+                    if (newsLink) newsLink.click();
+                });
+            });
+        }
+
+        // Check URL hash and show appropriate page
+        function checkUrlHash() {
+            const hash = window.location.hash.substring(1);
+            if (hash) {
+                const targetLink = document.querySelector(`.nav-link[data-page="${hash}"]`);
+                if (targetLink) {
+                    targetLink.click();
+                }
+            }
+        }
+
+        // Show specific page
+        function showPage(pageId) {
+            pages.forEach(page => {
+                page.classList.remove('active');
+            });
+            document.getElementById(`${pageId}-page`).classList.add('active');
+            
+            // Scroll to top of page
+            window.scrollTo(0, 0);
+        }
+
+        // Render players on team page
+        function renderPlayers() {
+            if (!playersContainer) return;
+            
+            playersContainer.innerHTML = '';
+            players.forEach(player => {
+                const playerCard = document.createElement('div');
+                playerCard.className = 'player-card card';
+                
+                // Get initials for player photo
+                const initials = player.name.substring(0, 2).toUpperCase();
+                
+                playerCard.innerHTML = `
+                    <div class="player-photo">${initials}</div>
+                    <div class="player-number">${player.number}</div>
+                    <h4>${player.name}</h4>
+                    <p><strong>Position:</strong> ${player.position}</p>
+                    <p style="font-size: 0.9rem; color: #666;">${player.bio}</p>
+                `;
+                playersContainer.appendChild(playerCard);
+            });
+        }
+
+        // Render news on news page
+        function renderNews() {
+            if (!newsContainer) return;
+            
+            newsContainer.innerHTML = '';
+            news.forEach(item => {
+                const newsCard = document.createElement('div');
+                newsCard.className = 'card news-item';
+                newsCard.innerHTML = `
+                    <div class="news-date"><i class="far fa-calendar"></i> ${formatDate(item.date)}</div>
+                    <h3>${item.title}</h3>
+                    <p>${item.content.substring(0, 180)}...</p>
+                    <button class="btn" style="margin-top: auto; padding: 10px 20px; align-self: flex-start;" onclick="showNewsDetail('${item.title}', '${item.content.replace(/'/g, "\\'")}', '${item.date}')"><i class="fas fa-arrow-right"></i> Read Full Story</button>
+                `;
+                newsContainer.appendChild(newsCard);
+            });
+        }
+
+        // Show news detail in alert (can be expanded to modal)
+        window.showNewsDetail = function(title, content, date) {
+            alert(`${title}\n\n${formatDate(date)}\n\n${content}`);
+        };
+
+        // Render fixtures and results
+        function renderFixtures() {
+            if (!upcomingFixtures || !recentResults) return;
+            
+            // Upcoming fixtures
+            const upcoming = fixtures.filter(f => f.type === "upcoming").slice(0, 5);
+            upcomingFixtures.innerHTML = '';
+            upcoming.forEach(fixture => {
+                const fixtureItem = document.createElement('div');
+                fixtureItem.className = 'fixture-item';
+                fixtureItem.innerHTML = `
+                    <div>
+                        <div class="fixture-date"><i class="far fa-calendar"></i> ${formatDate(fixture.date)} ${fixture.time}</div>
+                        <div><strong>${fixture.home}</strong> vs <strong>${fixture.away}</strong></div>
+                        <div class="fixture-competition">${fixture.venue} • ${fixture.competition}</div>
+                    </div>
+                    <div class="fixture-status status-upcoming">Upcoming</div>
+                `;
+                upcomingFixtures.appendChild(fixtureItem);
+            });
+            
+            // Recent results
+            const results = fixtures.filter(f => f.type === "result").slice(0, 5);
+            recentResults.innerHTML = '';
+            results.forEach(result => {
+                const resultItem = document.createElement('div');
+                resultItem.className = 'fixture-item';
+                resultItem.innerHTML = `
+                    <div>
+                        <div class="fixture-date"><i class="far fa-calendar"></i> ${formatDate(result.date)}</div>
+                        <div><strong>${result.home}</strong> ${result.score} <strong>${result.away}</strong></div>
+                        <div class="fixture-competition">${result.venue} • ${result.competition}</div>
+                    </div>
+                    <div class="fixture-status status-result">FT</div>
+                `;
+                recentResults.appendChild(resultItem);
+            });
+        }
+
+        // Render Division 2 table
+        function renderDivisionTable() {
+            if (!divisionTableBody || !fixturesTableBody) return;
+            
+            // Clear existing content
+            divisionTableBody.innerHTML = '';
+            fixturesTableBody.innerHTML = '';
+            
+            // Add rows to both tables
+            division2Standings.forEach(team => {
+                const rowClass = team.team === "Reale Hospital FC" ? "team-highlight" : "";
+                
+                const row = document.createElement('tr');
+                row.className = rowClass;
+                row.innerHTML = `
+                    <td>${team.position}</td>
+                    <td><strong>${team.team}</strong></td>
+                    <td>${team.played}</td>
+                    <td>${team.won}</td>
+                    <td>${team.drawn}</td>
+                    <td>${team.lost}</td>
+                    <td>${team.gf}/${team.ga}</td>
+                    <td>${team.gd > 0 ? '+' : ''}${team.gd}</td>
+                    <td><strong>${team.points}</strong></td>
+                `;
+                divisionTableBody.appendChild(row);
+                
+                // Also add to fixtures page table
+                const fixturesRow = document.createElement('tr');
+                fixturesRow.className = rowClass;
+                fixturesRow.innerHTML = `
+                    <td>${team.position}</td>
+                    <td><strong>${team.team}</strong></td>
+                    <td>${team.played}</td>
+                    <td>${team.won}</td>
+                    <td>${team.drawn}</td>
+                    <td>${team.lost}</td>
+                    <td>${team.gf}/${team.ga}</td>
+                    <td>${team.gd > 0 ? '+' : ''}${team.gd}</td>
+                    <td><strong>${team.points}</strong></td>
+                `;
+                fixturesTableBody.appendChild(fixturesRow);
+            });
+        }
+
+        // Format date for display
+        function formatDate(dateString) {
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            return new Date(dateString).toLocaleDateString('en-US', options);
+        }
+
+        // Toggle back to top button visibility
+        function toggleBackToTop() {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        }
+
+        // Initialize the website when DOM is loaded
+        document.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html>
